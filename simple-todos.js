@@ -5,7 +5,7 @@ if (Meteor.isClient) {
   Template.body.helpers({
     // get tasks from Mongo Database
     tasks: function(){
-      return Tasks.find({});
+      return Tasks.find({}, {sort: {createdAt: -1}});
     }
   });
 
