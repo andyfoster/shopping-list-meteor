@@ -5,7 +5,13 @@
 <body>
   <div class="container">
     <header>
-      <h1>Shopping List</h1>
+      <h1>Shopping List ({{incompleteCount}})</h1>
+
+      <label class="hide-completed">
+        <input type="checkbox" checked="{{hideCompleted}}">
+        Hide Completed Tasks
+      </label>
+
       <form class="new-task">
         <input type="text" name="text" placeholder="Type to add new item">
       </form>
@@ -20,5 +26,9 @@
 </body>
 
 <template name="task">
-  <li>{{text}}</li>
+  <li class="{{#if checked}}checked{{/if}}">
+    <button class="delete">&times;</button>
+    <input type="checkbox" class="toggle-checked">
+    <span class="text">{{text}}</span>
+  </li>
 </template>
