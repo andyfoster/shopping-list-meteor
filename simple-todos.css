@@ -110,6 +110,9 @@ header .hide-completed {
 .toggle-private {
   margin-left: 5px;
 }
+button.private {
+  color: red;
+}
 
 @media (max-width: 600px) {
   li {
